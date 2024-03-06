@@ -11,6 +11,7 @@ public class Scrapper {
     Document doc;
 
     // getting the html text
+    // original link: https://www.walmart.com/ip/Apple-iPhone-12-64GB-128GB-256GB-All-Colors-Factory-Unlocked-Cell-Phones-Good-Condition-Refurbished/549377034?athbdg=L1600&from=/search 
     File file = new File("Product/phone.html");
 
     try {
