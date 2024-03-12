@@ -6,9 +6,17 @@
  * Copyright(c) 2019 PLTW to present. All rights reserved
  */
 import java.util.Scanner;
-import java.io.File;
 import java.util.ArrayList;
 import java.io.*;
+import java.util.*; 
+
+import org.jsoup.Jsoup; 
+import org.jsoup.Connection; 
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.util.Scanner;
 
 /**
  * A DataCollector class to manage social media posts
@@ -110,16 +118,14 @@ public class DataCollector
    * @param usernames A string containing the usernames of people to target,
    * usernames are separated by a space.
    */
-  public void prepareAdvertisement(String filename, String usernames, String advertisement)
+  public void prepareAdvertisement(String filename, ArrayList<String> usernames, ArrayList<String> comments)
   {
     try
     {
-      FileWriter fw = new FileWriter(filename);
-      // Strin method split splits a string based on the provided token
-      // and returns an array of individual substrings
-      for (String un : usernames.split(" "))
+      FileWriter fw = new FileWriter(filename, true);
+      for (int i = 0; i < usernames.size(); i++)
       {
-          fw.write("@" + un + " " + advertisement +"\n");
+        fw.write("@" + usernames.get(i) + " " + comments.get(i) +"\n"); 
       }
       fw.close();
     }
