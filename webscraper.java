@@ -71,12 +71,15 @@ public class webscraper {
         for (Element r5:reviews5) {
             cmts.add(r5.text()); 
         }
-        dc.prepareAdvertisement("/Users/pingyaoliu/Downloads/unit2project/comments.txt", users, cmts); 
-        String usersString = String.join("", users); 
-        System.out.println(usersString); 
+        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/usersncomments.txt", users, cmts); 
+        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/users.txt", users); 
+        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/comments.txt", cmts); 
+        // String usersString = String.join("", users); 
+        // System.out.println(usersString); 
         // String cmtsString = String.join("\n", cmts); 
         // System.out.println(cmtsString); 
     }
 
 
 }
+

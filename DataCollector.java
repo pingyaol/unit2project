@@ -126,6 +126,25 @@ public class DataCollector
     }
   }
 
+  public void prepareAdvertisement(String filename, ArrayList<String> words)
+  {
+    try
+    {
+      FileWriter fw = new FileWriter(filename, true);
+      // Strin method split splits a string based on the provided token
+      // and returns an array of individual substrings
+      for (String un : words)
+      {
+          fw.write(un + "\n");
+      }
+      fw.close();
+    }
+    catch (IOException e)
+    {
+        System.out.println("Could not write to file. " + e);
+    }
+  }
+
   /**
    * Print the array of posts
    */
