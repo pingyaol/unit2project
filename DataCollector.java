@@ -8,15 +8,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.*; 
-
-import org.jsoup.Jsoup; 
-import org.jsoup.Connection; 
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.util.Scanner;
 
 /**
  * A DataCollector class to manage social media posts
