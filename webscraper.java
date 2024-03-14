@@ -10,6 +10,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class webscraper {
+    private static ArrayList<String> users = new ArrayList<String>();
+    private static ArrayList<String> cmts = new ArrayList<String>();
     public static void main(String[] args) throws IOException {
         Document doc1 = Jsoup.connect("https://www.walmart.com/reviews/product/549377034").get();
         Elements names1 = doc1.getElementsByClass("f6 gray pr2 mb2");
@@ -32,8 +34,6 @@ public class webscraper {
         Elements reviews5 = doc5.getElementsByClass("tl-m mb3 db-m");
 
         DataCollector dc = new DataCollector(); 
-        ArrayList<String> users = new ArrayList<String>();
-        ArrayList<String> cmts = new ArrayList<String>();
         // System.out.println(users.size());
         for (Element n1:names1) {
             users.add(n1.text()); 
@@ -71,9 +71,11 @@ public class webscraper {
         for (Element r5:reviews5) {
             cmts.add(r5.text()); 
         }
-        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/usersncomments.txt", users, cmts); 
-        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/users.txt", users); 
-        dc.prepareAdvertisement("/Users/test/Downloads/unit2project/scraped/comments.txt", cmts); 
+        dc.prepareAdvertisement("/Users/pingyaoliu/Downloads/unit2project/scraped/usersncomments.txt", users, cmts); 
+        dc.prepareAdvertisement("/Users/pingyaoliu/Downloads/unit2project/scraped/users.txt", users); 
+        dc.prepareAdvertisement("/Users/pingyaoliu/Downloads/unit2project/scraped/comments.txt", cmts); 
+        System.out.println(users.size());
+        System.out.println(cmts.size());
         // String usersString = String.join("", users); 
         // System.out.println(usersString); 
         // String cmtsString = String.join("\n", cmts); 

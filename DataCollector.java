@@ -145,6 +145,24 @@ public class DataCollector
     }
   }
 
+  public void contentWriter(String filename, String user, String message, boolean sent)
+  {
+    try
+    {
+      FileWriter fw = new FileWriter(filename, true);
+      if (sent) {
+        fw.write(message + user + "! \n");
+      } else {
+        fw.write(message + user + ". \n");
+      }
+      fw.close();
+    }
+    catch (IOException e)
+    {
+        System.out.println("Could not write to file. " + e);
+    }
+  }
+
   /**
    * Print the array of posts
    */
